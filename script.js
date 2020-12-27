@@ -37,6 +37,9 @@ function retrieveData() {
 function deleteUser() {
   fetch(`http://localhost:3001/api/v1/users/${deleteUserByID.value}`, {
       method: 'DELETE',
+      headers: {
+        'Content-type': 'application/json'
+      },
     })
     .then(response => response.json())
     .then(data => retrieveData());
